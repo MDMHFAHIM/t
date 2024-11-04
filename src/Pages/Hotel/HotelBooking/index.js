@@ -172,8 +172,7 @@ function HotelBooking() {
                                             </div>
                                         </div>
                                         <div className="col-12 d-flex justify-content-end">
-                                            {/* <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button> */}
-                                            <Link to={`/Mail`}>Order</Link>
+                                            <button type="submit" className="btn btn-warning mr-1 mb-1"><Link to={`/Mail`}>Order</Link></button>
                                             <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
                                         </div>
                                     </div>

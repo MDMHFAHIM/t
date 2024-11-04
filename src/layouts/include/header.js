@@ -54,8 +54,9 @@ function Header() {
                                             <li className="smooth-menu"><Link to={"/Offer"} >Offer</Link></li>
                                             <li className="smooth-menu"><Link to={"/Blog"} >Blog</Link></li>
                                             <li className="smooth-menu"><Link to={"/Subscription"} >Subscription</Link></li>
+
                                             <li>
-                                                <button className="book-btn" onClick={handelLogout}>logout
+                                                <button className="book-btn"> <Link to="/login" onClick={handelLogout}>logout</Link>
                                                 </button>
                                             </li>{/*-/.project-btn-*/}
                                         </ul>
