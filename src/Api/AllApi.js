@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const login = async (data) => {
-    const LOGIN_ENDPOINT = `${process.env.REACT_APP_API_URL}/login`;
+    const LOGIN_ENDPOINT = `${process.env.REACT_APP_FRONT_URL}/login`;
     try {
         let response = await axios.post(LOGIN_ENDPOINT, data);
         if (response.data.jwt) {
@@ -18,7 +18,7 @@ const login = async (data) => {
     }
 }
 const register = async (data) => {
-    const SIGNUP_ENDPOINT = `${process.env.REACT_APP_API_URL}/register`;
+    const SIGNUP_ENDPOINT = `${process.env.REACT_APP_FRONT_URL}/register`;
     try {
         let response = await axios({
             method: 'post',

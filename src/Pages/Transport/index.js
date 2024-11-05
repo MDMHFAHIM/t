@@ -17,7 +17,7 @@ function Transport() {
 
     const getDatas = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/transport/`);
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/transport/`);
             setData(response.data.data);
         } catch (err) {
             setError("Failed to fetch transports.");

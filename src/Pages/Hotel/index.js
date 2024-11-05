@@ -15,7 +15,7 @@ function Hotel() {
 
     const getDatas = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/hotel/`);
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/hotel/`);
             setData(response.data.data);
         } catch (err) {
             setError("Failed to fetch hotels.");

@@ -16,7 +16,7 @@ function Package() {
 
     const getDatas = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/package/`);
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/package/`);
             setData(response.data.data);
         } catch (err) {
             setError("Failed to fetch packages.");

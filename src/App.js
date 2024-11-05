@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Destination from "./Pages/Destination";
 import Package from "./Pages/Package";
@@ -12,11 +14,16 @@ import Blog from "./Pages/Blog";
 import Subscription from "./Pages/Subscription";
 import HotelBooking from './Pages/Hotel/HotelBooking';
 
+// import Protected from './components/protected';
+
 
 function App() {
+  const isSignedIn = localStorage.getItem("access_token") || false;
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/Destination" element={<Destination />} />
         <Route path="/Package" element={<Package />} />
@@ -27,8 +34,6 @@ function App() {
         <Route path="/Offer" element={<Offer />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Subscription" element={<Subscription />} />
-
-
 
       </Routes>
     </BrowserRouter>

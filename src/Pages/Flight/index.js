@@ -16,7 +16,7 @@ function Flight() {
 
     const getDatas = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/flight/`);
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/flight/`);
             setData(response.data.data);
         } catch (err) {
             setError("Failed to fetch flights.");
