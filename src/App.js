@@ -18,7 +18,7 @@ import HotelBooking from './Pages/Hotel/HotelBooking';
 
 
 function App() {
-  const isSignedIn = localStorage.getItem("access_token") || false;
+  // const isSignedIn = localStorage.getItem("access_token") || false;
   return (
     <BrowserRouter>
       <Routes>
