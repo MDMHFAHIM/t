@@ -64,7 +64,7 @@ function Package() {
                                             </div>
                                         </div>
                                         <div className="package-price">
-                                            <h3><span>$</span>{d.roomfare || 100}</h3>
+                                            <h3><span>$</span>{d.fare || 100}</h3>
                                             <Link className="btn" to={`/Package/booking/${d.id}`}><i className="fa fa-shopping-cart"></i> Book Now</Link>
                                         </div>
                                     </div>
