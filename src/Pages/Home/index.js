@@ -1,7 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import axios from '../../components/axios';
 import AdminLayout from '../../layouts/AdminLayout';
+import { Link } from 'react-router-dom';
 
 function Home() {
+    const [zone, setzone] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        getDatas();
+    }, []);
+
+    const getDatas = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/zone/`);
+            setzone(response.data.data);
+        } catch (err) {
+            setError("Failed to fetch hotels.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <AdminLayout>
 
@@ -118,11 +140,9 @@ function Home() {
                                                                 <select className="form-control ">
 
                                                                     <option value="default">Enter Your Destination Country</option>{/*- /.option-*/}
-
-                                                                    <option value="turkey">Turkey</option>{/*- /.option-*/}
-
-                                                                    <option value="russia">Russia</option>{/*- /.option-*/}
-                                                                    <option value="egept">Egypt</option>{/*- /.option-*/}
+                                                                    {zone.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
 
                                                                 </select>{/*- /.select-*/}
                                                             </div>{/*- /.travel-select-icon -*/}
@@ -243,116 +263,96 @@ function Home() {
 
                                         <div role="tabpanel" className="tab-pane fade in" id="hotels">
                                             <div className="tab-para">
+                                                <form method="get">
+                                                    <div className="row">
+                                                        <div className="col-lg-4 col-md-4 col-sm-12">
+                                                            <div className="single-tab-select-box">
 
-                                                <div className="row">
-                                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                                        <div className="single-tab-select-box">
+                                                                <h2>Destination</h2>
 
-                                                            <h2>Destination</h2>
+                                                                <div className="travel-select-icon">
+                                                                    <select className="form-control ">
+                                                                        <option value="default">Enter Your Destination</option>{/*- /.option-*/}
+                                                                        {zone.map((d) => (
+                                                                            <option key={d.id} value={d.id}>{d.name}</option>
+                                                                        ))}
+                                                                    </select>{/*- /.select-*/}
+                                                                </div>{/*- /.travel-select-icon -*/}
+                                                            </div>{/*-/.single-tab-select-box-*/}
+                                                        </div>{/*-/.col-*/}
 
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
+                                                        <div className="col-lg-2 col-md-3 col-sm-4">
+                                                            <div className="single-tab-select-box">
+                                                                <h2>Check In</h2>
+                                                                <div className="travel-check-icon">
+                                                                    <form action="#">
+                                                                        <input type="text" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    </form>
+                                                                </div>{/*- /.travel-check-icon -*/}
+                                                            </div>{/*-/.single-tab-select-box-*/}
+                                                        </div>{/*-/.col-*/}
 
-                                                                    <option value="default">Enter Your Destination Country</option>{/*- /.option-*/}
+                                                        <div className="col-lg-2 col-md-3 col-sm-4">
+                                                            <div className="single-tab-select-box">
+                                                                <h2>Check Out</h2>
+                                                                <div className="travel-check-icon">
+                                                                    <form action="#">
+                                                                        <input type="text" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    </form>
+                                                                </div>{/*- /.travel-check-icon -*/}
+                                                            </div>{/*-/.single-tab-select-box-*/}
+                                                        </div>{/*-/.col-*/}
 
-                                                                    <option value="turkey">Turkey</option>{/*- /.option-*/}
+                                                        <div className="col-lg-2 col-md-1 col-sm-4">
+                                                            <div className="single-tab-select-box">
+                                                                <h2>Duration</h2>
+                                                                <div className="travel-select-icon">
+                                                                    <select className="form-control ">
 
-                                                                    <option value="russia">Russia</option>{/*- /.option-*/}
-                                                                    <option value="egept">Egypt</option>{/*- /.option-*/}
+                                                                        <option value="default">5</option>{/*- /.option-*/}
 
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
+                                                                        <option value="10">10</option>{/*- /.option-*/}
 
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
+                                                                        <option value="15">15</option>{/*- /.option-*/}
+                                                                        <option value="20">20</option>{/*- /.option-*/}
 
-                                                                    <option value="default">Enter Your Destination Location</option>{/*- /.option-*/}
+                                                                    </select>{/*- /.select-*/}
+                                                                </div>{/*- /.travel-select-icon -*/}
+                                                            </div>{/*-/.single-tab-select-box-*/}
+                                                        </div>{/*-/.col-*/}
 
-                                                                    <option value="istambul">istanbul</option>{/*- /.option-*/}
+                                                        <div className="col-lg-2 col-md-1 col-sm-4">
+                                                            <div className="single-tab-select-box">
+                                                                <h2>Member</h2>
+                                                                <div className="travel-select-icon">
+                                                                    <select className="form-control ">
 
-                                                                    <option value="mosko">Mosco</option>{/*- /.option-*/}
-                                                                    <option value="cairo">Cairo</option>{/*- /.option-*/}
+                                                                        <option value="default">1</option>{/*- /.option-*/}
 
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
+                                                                        <option value="2">2</option>{/*- /.option-*/}
 
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
+                                                                        <option value="4">4</option>{/*- /.option-*/}
+                                                                        <option value="8">8</option>{/*- /.option-*/}
 
-                                                    <div className="col-lg-2 col-md-3 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>Check In</h2>
-                                                            <div className="travel-check-icon">
-                                                                <form action="#">
-                                                                    <input type="text" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
-                                                                </form>
-                                                            </div>{/*- /.travel-check-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
+                                                                    </select>{/*- /.select-*/}
+                                                                </div>{/*- /.travel-select-icon -*/}
+                                                            </div>{/*-/.single-tab-select-box-*/}
+                                                        </div>{/*-/.col-*/}
 
-                                                    <div className="col-lg-2 col-md-3 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>Check Out</h2>
-                                                            <div className="travel-check-icon">
-                                                                <form action="#">
-                                                                    <input type="text" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
-                                                                </form>
-                                                            </div>{/*- /.travel-check-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
+                                                    </div>{/*-/.row-*/}
 
-                                                    <div className="col-lg-2 col-md-1 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>Duration</h2>
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
-
-                                                                    <option value="default">5</option>{/*- /.option-*/}
-
-                                                                    <option value="10">10</option>{/*- /.option-*/}
-
-                                                                    <option value="15">15</option>{/*- /.option-*/}
-                                                                    <option value="20">20</option>{/*- /.option-*/}
-
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
-
-                                                    <div className="col-lg-2 col-md-1 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>Member</h2>
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
-
-                                                                    <option value="default">1</option>{/*- /.option-*/}
-
-                                                                    <option value="2">2</option>{/*- /.option-*/}
-
-                                                                    <option value="4">4</option>{/*- /.option-*/}
-                                                                    <option value="8">8</option>{/*- /.option-*/}
-
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
-
-                                                </div>{/*-/.row-*/}
-
-                                                <div className="row">
-                                                    <div className="col-sm-5"></div>{/*-/.col-*/}
-                                                    <div className="clo-sm-7">
-                                                        <div className="about-btn travel-mrt-0 pull-right">
-                                                            <button className="about-view travel-btn">
-                                                                Search
-                                                            </button>{/*-/.travel-btn-*/}
-                                                        </div>{/*-/.about-btn-*/}
-                                                    </div>{/*-/.col-*/}
-
-                                                </div>{/*-/.row-*/}
-
+                                                    <div className="row">
+                                                        <div className="col-sm-5"></div>{/*-/.col-*/}
+                                                        <div className="clo-sm-7">
+                                                            <div className="about-btn travel-mrt-0 pull-right">
+                                                                <button type='submit' className="about-view travel-btn">
+                                                                    Search
+                                                                </button>{/*-/.travel-btn-*/}
+                                                            </div>{/*-/.about-btn-*/}
+                                                        </div>{/*-/.col-*/}
+                                                    </div>{/*-/.row-*/}
+                                                </form>
                                             </div>{/*-/.tab-para-*/}
-
                                         </div>{/*-/.tabpannel-*/}
 
                                         <div role="tabpanel" className="tab-pane fade in" id="flights">

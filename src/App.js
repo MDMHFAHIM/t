@@ -13,6 +13,7 @@ import Offer from './Pages/Offer';
 import Blog from "./Pages/Blog";
 import Subscription from "./Pages/Subscription";
 import HotelBooking from './Pages/Hotel/HotelBooking';
+import Mail from './Pages/Mail';
 
 // import Protected from './components/protected';
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Offer" element={<Offer />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Subscription" element={<Subscription />} />
+        <Route path="/Mail" element={<Mail />} />
 
       </Routes>
     </BrowserRouter>

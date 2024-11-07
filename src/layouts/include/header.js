@@ -6,13 +6,12 @@ import { logout } from '../../Api/AllApi'
 
 
 function Header() {
+    let userdata=JSON.parse(localStorage.getItem("front_userdata"));
     const navigate = useNavigate();
     const handelLogout = () => {
         logout();
         navigate('/login');
     }
-
-
 
     {/*for link active */ }
     const location = useLocation();
@@ -54,11 +53,15 @@ function Header() {
                                             <li className="smooth-menu"><Link to={"/Offer"} >Offer</Link></li>
                                             <li className="smooth-menu"><Link to={"/Blog"} >Blog</Link></li>
                                             <li className="smooth-menu"><Link to={"/Subscription"} >Subscription</Link></li>
-
-                                            <li>
-                                                <button className="book-btn"> <Link to="/login" onClick={handelLogout}>logout</Link>
-                                                </button>
-                                            </li>{/*-/.project-btn-*/}
+                                            
+                                                {userdata ? 
+                                                    <>
+                                                        <span className='text-white'>Hi, {userdata?.name}</span>
+                                                        <button className="book-btn" onClick={handelLogout}>logout</button>
+                                                    </> : 
+                                                    <button className="book-btn"><Link to={"/login"}> Join Now</Link></button>
+                                                }
+                                            
                                         </ul>
                                     </div>{/*- /.navbar-collapse -*/}
                                 </div>{/*- /.main-menu-*/}

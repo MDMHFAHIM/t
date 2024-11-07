@@ -2,12 +2,13 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const login = async (data) => {
-    const LOGIN_ENDPOINT = `${process.env.REACT_APP_FRONT_URL}/login`;
+    const LOGIN_ENDPOINT = `${process.env.REACT_APP_FRONT_URL}/customer/login`;
     try {
         let response = await axios.post(LOGIN_ENDPOINT, data);
-        if (response.data.jwt) {
-            localStorage.setItem("front_access_token", response.data.jwt);
-            localStorage.setItem("front_userdata", JSON.stringify(response.data.datas));
+        console.log(response)
+        if (response.data.data.token) {
+            localStorage.setItem("front_access_token",response.data.data.token);
+            localStorage.setItem("front_userdata", JSON.stringify(response.data.data.data));
             return true;
         } else {
             return false;
@@ -33,7 +34,7 @@ const register = async (data) => {
     }
 }
 const logout = () => {
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("userdata");
+    localStorage.removeItem("front_access_token");
+    localStorage.removeItem("front_userdata");
 }
 export { login, register, logout }

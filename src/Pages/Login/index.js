@@ -20,6 +20,7 @@ function Login() {
             alert("Sorry password or email address is wrong!");
         }
     }
+    
     return (
         <AuthLayout>
             <div className="text-center mb-5">
@@ -65,4 +66,4 @@ function Login() {
     )
 }
 
-export default login
+export default Login

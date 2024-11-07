@@ -43,7 +43,7 @@ function Hotel() {
                         <div className="row">
                             {data.length > 0 ? (
                                 data.map((d) => (
-                                    <div className="col-md-4 col-sm-6" key={d.id}>
+                                    <div className="col-md-4 col-sm-6 hotelblock" key={d.id}>
                                         <div className="hotel-item">
                                             <div className="hotel-title">
                                                 <h3>{d.hotel_name}</h3>
@@ -56,7 +56,6 @@ function Hotel() {
                                                             src={`${process.env.REACT_APP_BACKEND_URL}/hotel/${src}`}
                                                             alt="hotel"
                                                             width="100%"
-                                                            style={{ display: i === 0 ? 'block' : 'none' }}
                                                         />
                                                     ))}
                                                 </a>
