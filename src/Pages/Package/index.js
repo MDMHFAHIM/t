@@ -44,7 +44,7 @@ function Package() {
                         <div className="row">
                             {data.length > 0 ? (
                                 data.map((d) => (
-                                    <div className="col-md-4 col-sm-6" key={d.id}>
+                                    <div className="col-md-4 col-sm-6 packageblock" key={d.id}>
                                         <div className="package-item">
                                             <div className="package-title">
                                                 <h3>{d.package_name}</h3>

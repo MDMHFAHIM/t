@@ -45,7 +45,7 @@ function Transport() {
                         <div className="row">
                             {data.length > 0 ? (
                                 data.map((d) => (
-                                    <div className="col-md-4 col-sm-6" key={d.id}>
+                                    <div className="col-md-4 col-sm-6 transportblock" key={d.id}>
                                         <div className="transport-item">
                                             <div className="transport-title">
                                                 <h3>{d.vehicle_id.name}</h3>

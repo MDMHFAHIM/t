@@ -9,10 +9,10 @@ import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 
-function HotelBooking() {
+function FlightBooking() {
     let userdata = JSON.parse(localStorage.getItem("front_userdata"));
     const [inputs, setInputs] = useState({
-        id: '', customer_id: userdata.id, hotel_id: '', roomtype_id: '', number_of_room: '', number_of_guest_adult: '', number_of_guest_child: '', check_in_date: '', check_out_date: '', total_amount: '',
+        id: '', customer_id: userdata.id, flight_id: '', number_of_seat: '', check_in_date: '', check_out_date: '', total_amount: '',
     });
     const [roomtype, setRoomtype] = useState([]);// get room type after hotel selected. data will be array
     const [roomfare, setRoomfare] = useState([]);// get room fare after room type selected. data will be array
@@ -181,4 +181,4 @@ function HotelBooking() {
     )
 }
 
-export default HotelBooking
+export default FlightBooking

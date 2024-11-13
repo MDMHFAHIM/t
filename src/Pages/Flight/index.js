@@ -44,7 +44,7 @@ function Flight() {
                         <div className="row">
                             {data.length > 0 ? (
                                 data.map((d) => (
-                                    <div className="col-md-4 col-sm-6" key={d.id}>
+                                    <div className="col-md-4 col-sm-6 flightblock" key={d.id}>
                                         <div className="flight-item">
                                             <div className="flight-title">
                                                 <h3>{d.airline.name}</h3>

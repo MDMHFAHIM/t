@@ -1792,9 +1792,23 @@ a.btn {
     padding: 0;
     margin: 0;
 }
-.hotelblock{
-    height:260px;
+
+.hotelblock {
+    height: 260px;
 }
-.text-white{
-    color:#FFF;
+
+.text-white {
+    color: #FFF;
+}
+
+.flightblock {
+    height: 260px;
+}
+
+.transportblock {
+    height: 260px;
+}
+
+.packageblock {
+    height: 260px;
 }

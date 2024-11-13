@@ -1784,3 +1784,12 @@ body {
 
 
 /*========================Thank you=================*/
+
+.flightblock {
+    height: 260px;
+    width: 33.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
