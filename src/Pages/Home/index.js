@@ -152,11 +152,9 @@ function Home() {
 
                                                                     <option value="default">Enter Your Destination Location</option>{/*- /.option-*/}
 
-                                                                    <option value="istambul">Istanbul</option>{/*- /.option-*/}
-
-                                                                    <option value="mosko">Mosco</option>{/*- /.option-*/}
-                                                                    <option value="cairo">Cairo</option>{/*- /.option-*/}
-
+                                                                    {zone.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
                                                                 </select>{/*- /.select-*/}
                                                             </div>{/*- /.travel-select-icon -*/}
 
@@ -168,7 +166,7 @@ function Home() {
                                                             <h2>Check In</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    <input type="date" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
                                                         </div>{/*-/.single-tab-select-box-*/}
@@ -179,7 +177,7 @@ function Home() {
                                                             <h2>Check out</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    <input type="date" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
                                                         </div>{/*-/.single-tab-select-box-*/}
@@ -286,7 +284,7 @@ function Home() {
                                                                 <h2>Check In</h2>
                                                                 <div className="travel-check-icon">
                                                                     <form action="#">
-                                                                        <input type="text" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                        <input type="date" name="check_in" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                     </form>
                                                                 </div>{/*- /.travel-check-icon -*/}
                                                             </div>{/*-/.single-tab-select-box-*/}
@@ -297,7 +295,7 @@ function Home() {
                                                                 <h2>Check Out</h2>
                                                                 <div className="travel-check-icon">
                                                                     <form action="#">
-                                                                        <input type="text" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                        <input type="date" name="check_out" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                     </form>
                                                                 </div>{/*- /.travel-check-icon -*/}
                                                             </div>{/*-/.single-tab-select-box-*/}
@@ -384,12 +382,9 @@ function Home() {
                                                             <div className="travel-select-icon">
                                                                 <select className="form-control ">
 
-                                                                    <option value="default">Enter Your Location</option>{/*- /.option-*/}
-
-                                                                    <option value="turkey">Turkey</option>{/*- /.option-*/}
-
-                                                                    <option value="russia">Russia</option>{/*- /.option-*/}
-                                                                    <option value="egept">Egypt</option>{/*- /.option-*/}
+                                                                    {zone.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
 
                                                                 </select>{/*- /.select-*/}
                                                             </div>{/*- /.travel-select-icon -*/}
@@ -401,7 +396,7 @@ function Home() {
                                                             <h2>Departure</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="departure" className="form-control" data-toggle="datepicker"
+                                                                    <input type="date" name="departure" className="form-control" data-toggle="datepicker"
                                                                         placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
@@ -413,7 +408,7 @@ function Home() {
                                                             <h2>Return</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="return" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    <input type="date" name="return" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
                                                         </div>{/*-/.single-tab-select-box-*/}
@@ -466,12 +461,9 @@ function Home() {
                                                             <div className="travel-select-icon">
                                                                 <select className="form-control ">
 
-                                                                    <option value="default">Enter Your Destination Location</option>{/*- /.option-*/}
-
-                                                                    <option value="istambul">Istanbul</option>{/*- /.option-*/}
-
-                                                                    <option value="mosko">Mosco</option>{/*- /.option-*/}
-                                                                    <option value="cairo">Cairo</option>{/*- /.option-*/}
+                                                                    {zone.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
 
                                                                 </select>{/*- /.select-*/}
                                                             </div>{/*- /.travel-select-icon -*/}
@@ -518,7 +510,7 @@ function Home() {
                                                         <label for="radio03">
                                                             <span className="round-boarder">
                                                                 <span className="round-boarder1"></span>
-                                                            </span>Round Trip
+                                                            </span>Half Trip
                                                         </label>
                                                     </div>{/*-/.single-trip-circle-*/}
                                                     <div className="single-trip-circle">
@@ -526,7 +518,7 @@ function Home() {
                                                         <label for="radio04">
                                                             <span className="round-boarder">
                                                                 <span className="round-boarder1"></span>
-                                                            </span>One Way
+                                                            </span>Full Trip
                                                         </label>
                                                     </div>{/*-/.single-trip-circle-*/}
                                                 </div>{/*-/.trip-circle-*/}
@@ -539,60 +531,23 @@ function Home() {
                                                             <div className="travel-select-icon">
                                                                 <select className="form-control ">
 
-                                                                    <option value="default">Enter Your Location</option>{/*- /.option-*/}
-
-                                                                    <option value="turkey">Turkey</option>{/*- /.option-*/}
-
-                                                                    <option value="russia">Russia</option>{/*- /.option-*/}
-                                                                    <option value="egept">Egypt</option>{/*- /.option-*/}
+                                                                    {zone.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
 
                                                                 </select>{/*- /.select-*/}
                                                             </div>{/*- /.travel-select-icon -*/}
                                                         </div>{/*-/.single-tab-select-box-*/}
                                                     </div>{/*-/.col-*/}
 
-                                                    <div className="col-lg-2 col-md-1 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>Country</h2>
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
 
-                                                                    <option value="default">5</option>{/*- /.option-*/}
-
-                                                                    <option value="10">10</option>{/*- /.option-*/}
-
-                                                                    <option value="15">15</option>{/*- /.option-*/}
-                                                                    <option value="20">20</option>{/*- /.option-*/}
-
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
-
-                                                    <div className="col-lg-2 col-md-1 col-sm-4">
-                                                        <div className="single-tab-select-box">
-                                                            <h2>State</h2>
-                                                            <div className="travel-select-icon">
-                                                                <select className="form-control ">
-
-                                                                    <option value="default">1</option>{/*- /.option-*/}
-
-                                                                    <option value="2">2</option>{/*- /.option-*/}
-
-                                                                    <option value="4">4</option>{/*- /.option-*/}
-                                                                    <option value="8">8</option>{/*- /.option-*/}
-
-                                                                </select>{/*- /.select-*/}
-                                                            </div>{/*- /.travel-select-icon -*/}
-                                                        </div>{/*-/.single-tab-select-box-*/}
-                                                    </div>{/*-/.col-*/}
 
                                                     <div className="col-lg-2 col-md-3 col-sm-4">
                                                         <div className="single-tab-select-box">
                                                             <h2>Departure</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="departure" className="form-control" data-toggle="datepicker"
+                                                                    <input type="date" name="departure" className="form-control" data-toggle="datepicker"
                                                                         placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
@@ -604,7 +559,7 @@ function Home() {
                                                             <h2>Return</h2>
                                                             <div className="travel-check-icon">
                                                                 <form action="#">
-                                                                    <input type="text" name="return" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
+                                                                    <input type="date" name="return" className="form-control" data-toggle="datepicker" placeholder="29 -04 - 2025 " />
                                                                 </form>
                                                             </div>{/*- /.travel-check-icon -*/}
                                                         </div>{/*-/.single-tab-select-box-*/}

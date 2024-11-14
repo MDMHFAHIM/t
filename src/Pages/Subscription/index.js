@@ -23,9 +23,31 @@ function Subscription() {
                             <div className="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                                 <div className="custom-input-group">
                                     <input type="email" className="form-control" placeholder="Enter your Email Here" />
+
                                     <button className="appsLand-btn subscribe-btn">Subscribe</button>
                                     <div className="clearfix"></div>
                                     <i className="fa fa-envelope"></i>
+                                </div>
+
+                                <br />
+
+                                <div className="custom-input-group">
+
+                                    <input type="text" className="form-control" placeholder=" Drop Your Contact Number" />
+
+                                    <button className="appsLand-btn subscribe-btn">Subscribe</button>
+                                    <div className="clearfix"></div>
+                                    <i className="fa fa-envelope"></i>
+                                </div>
+
+                                <br />
+                                <br />
+
+                                <div className="subscribe-title text-center">
+                                    <h3>
+                                        Charge ~ 50$/Month | 500$/Annual
+                                    </h3>
+
                                 </div>
 
                             </div>
