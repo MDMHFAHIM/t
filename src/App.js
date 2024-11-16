@@ -14,6 +14,8 @@ import Blog from "./Pages/Blog";
 import Subscription from "./Pages/Subscription";
 import HotelBooking from './Pages/Hotel/HotelBooking';
 import Mail from './Pages/Mail';
+import Cash from './Pages/Cash';
+import Online from './Pages/Online';
 
 // import Protected from './components/protected';
 
@@ -36,6 +38,8 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Subscription" element={<Subscription />} />
         <Route path="/Mail" element={<Mail />} />
+        <Route path="/Cash" element={<Cash />} />
+        <Route path="/Online" element={<Online />} />
 
       </Routes>
     </BrowserRouter>
