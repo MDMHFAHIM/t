@@ -30,7 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Destination" element={<Destination />} />
         <Route path="/Package" element={<Package />} />
-        <Route path="/Hotel" element={<Hotel />} />
+        <Route path="/Hotel/:zone_id?" element={<Hotel />} />
         <Route path="/Hotel/booking/:id" element={<HotelBooking />} />
         <Route path="/Flight" element={<Flight />} />
         <Route path="/Transport" element={<Transport />} />

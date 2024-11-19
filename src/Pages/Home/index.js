@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import axios from '../../components/axios';
 import AdminLayout from '../../layouts/AdminLayout';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
     const [zone, setzone] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         getDatas();
     }, []);
@@ -23,6 +23,11 @@ function Home() {
             setLoading(false);
         }
     };
+
+    const searchHotel = async (e) => {
+        let zone_id = e.target.hotel_zone.value;
+        navigate('/Hotel/' + zone_id)
+    }
 
     return (
         <AdminLayout>
@@ -261,7 +266,7 @@ function Home() {
 
                                         <div role="tabpanel" className="tab-pane fade in" id="hotels">
                                             <div className="tab-para">
-                                                <form method="get">
+                                                <form method="post" onSubmit={searchHotel}>
                                                     <div className="row">
                                                         <div className="col-lg-4 col-md-4 col-sm-12">
                                                             <div className="single-tab-select-box">
@@ -269,7 +274,7 @@ function Home() {
                                                                 <h2>Destination</h2>
 
                                                                 <div className="travel-select-icon">
-                                                                    <select className="form-control ">
+                                                                    <select className="form-control" name="hotel_zone" id="hotel_zone">
                                                                         <option value="default">Enter Your Destination</option>{/*- /.option-*/}
                                                                         {zone.map((d) => (
                                                                             <option key={d.id} value={d.id}>{d.name}</option>

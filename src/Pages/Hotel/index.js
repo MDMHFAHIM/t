@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import axios from '../../components/axios';
 import AdminLayout from '../../layouts/AdminLayout';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Hotel() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { zone_id } = useParams();
 
     useEffect(() => {
         getDatas();
@@ -15,7 +16,13 @@ function Hotel() {
 
     const getDatas = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}/hotel/`);
+            let url = "";
+            if (zone_id) {
+                url = `/hotel?zone_id=${zone_id}`
+            } else {
+                url = `/hotel`
+            }
+            const response = await axios.get(`${process.env.REACT_APP_FRONT_URL}${url}`);
             setData(response.data.data);
         } catch (err) {
             setError("Failed to fetch hotels.");

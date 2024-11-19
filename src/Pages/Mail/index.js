@@ -24,8 +24,11 @@ function Mail() {
                         <div className="row">
 
 
+
                         </div>
                     </div>
+
+
                 </div>
             </section>
         </AdminLayout>

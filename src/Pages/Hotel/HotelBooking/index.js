@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from '../../../components/axios';
 
 import AdminLayout from '../../../layouts/AdminLayout';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
