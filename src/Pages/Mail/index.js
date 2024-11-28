@@ -19,13 +19,6 @@ function Mail() {
                         <p>
                             <h4> Check Your Mail And Kindly Follow Given Instruction For Order & Payment. </h4>
                         </p>
-                    </div>{/*-/.gallery-header-*/}
-                    <div className="packages-content">
-                        <div className="row">
-
-
-
-                        </div>
                     </div>
 
 
